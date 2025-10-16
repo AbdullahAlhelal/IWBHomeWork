@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>تطبيقات الذكاء الاصطناعي بين يديك</title>
+<link rel="stylesheet" href="Style.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="myFunctions.js"></script>
+</head>
+
+<body>
+  <nav class="navbar">
+            <h1 dir="rtl">Web Application Development and Design</h1>
+            <ul>
+                <li><a href="home.html">الصفحة الرئيسية</a></li>
+                <li><a href="AboutUs.html">من نحن</a></li>
+                <li><a href="app3.html">التطبيقات</a></li>
+                <!-- إضافة رابط لصفحة إضافة التطبيق -->
+                <li><a href="add_app.html">إضافة تطبيق</a></li>
+            </ul>
+        
+      </nav>
+  <main class="container">
+    <header class="header">
+      <p><span><b>تطبيقات الذكاء الاصطناعي بين يديك</b></span></p>
+      <div class="card">
+        <table class="students-table" id="appsTable">
+          <caption>أمثلة عن تطبيقات الذكاء الاصطناعي</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>اسم التطبيق</th>
+              <th>اسم الشركة المطورة</th>
+              <th>مجال الاستخدام</th>
+              <th>مجاني /غير مجاني</th>
+              <th>اختيار</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Designs.ai</td>
+              <td>Pixlr Inmagine Group</td>
+              <td>إنشاء صور وفيديوهات ونصوص أو تحويل النص إلى صوت</td>
+              <td>
+                <p>مجاني جزئي <input type="checkbox" checked></p>
+                <p>مجاني <input type="checkbox"></p>
+                <p>غير مجاني <input type="checkbox"></p>
+              </td>
+              <td><label><input type="radio" name="details" value="designs" onchange="toggleDetails(this)"> تفاصيل</label></td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>Mindgrasp</td>
+              <td>غير معروف</td>
+              <td>مساعد دراسي</td>
+              <td>
+                <p>مجاني جزئي <input type="checkbox" checked></p>
+                <p>مجاني <input type="checkbox"></p>
+                <p>غير مجاني <input type="checkbox"></p>
+              </td>
+              <td><label><input type="radio" name="details" value="mindgrasp" onchange="toggleDetails(this)"> تفاصيل</label></td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Microsoft Math Solver</td>
+              <td>Microsoft</td>
+              <td> حل معادلات ومسائل رياضيات</td>
+              <td>
+                <p>مجاني جزئي <input type="checkbox" ></p>
+                <p>مجاني <input type="checkbox" checked> </p>
+                <p>غير مجاني <input type="checkbox"></p>
+              </td>
+              <td><label><input type="radio" name="details" value="MicrosoftMathSolver" onchange="toggleDetails(this)"> تفاصيل</label></td>
+            </tr>
+
+
+            <tr>
+              <td>4</td>
+              <td>Filmora</td>
+              <td>Wondershare Technology</td>
+              <td>تحرير الفيديوهات</td>
+              <td>
+                <p>مجاني جزئي <input type="checkbox" checked></p>
+                <p>مجاني <input type="checkbox"></p>
+                <p>غير مجاني <input type="checkbox"></p>
+              </td>
+              <td><label><input type="radio" name="details" value="filmora" onchange="toggleDetails(this)"> تفاصيل</label></td>
+            </tr>
+
+            <tr>
+              <td>5</td>
+              <td>Blaze.ai</td>
+              <td>Adam Nathan</td>
+              <td>توليد محتوى تسويقي</td>
+              <td>
+                <p>مجاني جزئي <input type="checkbox" checked></p>
+                <p>مجاني <input type="checkbox"></p>
+                <p>غير مجاني <input type="checkbox"></p>
+              </td>
+              <td><label><input type="radio" name="details" value="blaze" onchange="toggleDetails(this)"> تفاصيل</label></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </header>
+  </main>
+  
+    <div id="customAlert" role="alert">
+        <p id="alertMessage"></p>
+        <button id="alertButton">موافق</button>
+    </div>
+
+  <script>
+    const detailsData = {
+      designs: {
+        text: "تصميم فيديوهات وصور ومحتوى تسويقي بسرعة باستخدام الذكاء الاصطناعي.",
+        img: "media/designs.png",
+         video: "media/HB.mp4",
+        link: "https://designs.ai"
+      },
+      mindgrasp: {
+        text: "يساعد على تلخيص النصوص والمقالات وتوليد ملاحظات دراسية ذكية.",
+        img: "media/mindgrasp.png",
+        link: "https://mindgrasp.ai"
+      },
+      MicrosoftMathSolver: {
+        text: "تطبيق لحل مسائل الرياضيات وتصوير السؤال للحصول على الحل بالشرح.",
+        img: "media/MicrosoftMathSolver.png",
+        audio: "media/m.wav",
+        link: "https://mathsolver.microsoft.com"
+      },
+      filmora: {
+        text: "برنامج لتحرير الفيديوهات يوفر أدوات ذكاء اصطناعي لتوليد المؤثرات وتحسين الجودة.",
+        img: "media/filmora.png",
+        link: "https://filmora.wondershare.com"
+      },
+      blaze: {
+        text: "مولد محتوى تسويقي سريع لإنشاء منشورات ومدونات ورسائل بريدية احترافية.",
+        img: "media/blaze.ai", // تم تعديل المسار افتراضيا
+        link: "https://www.blaze.ai"
+      }
+    };
+
+    let lastSelected = null;
+
+    function toggleDetails(radio) {
+      $(".details-row").remove();
+
+      if (lastSelected === radio) {
+        radio.checked = false;
+        lastSelected = null;
+        return;
+      }
+
+      lastSelected = radio;
+      
+      let app;
+      if (radio.value === "newApp") {
+          app = $(radio).data('details');
+      } else {
+          app = detailsData[radio.value];
+      }
+
+      if (!app) return;
+
+      const detailsRow = document.createElement("tr");
+      detailsRow.className = "details-row";
+
+      const cell = document.createElement("td");
+      cell.colSpan = 6;
+
+      const container = document.createElement("div");
+      container.className = "details-content";
+
+      if (app.img && !app.isNew) {
+        const img = document.createElement("img");
+        img.src = app.img;
+        img.alt = radio.value;
+        container.appendChild(img);
+      } else if (app.isNew) {
+         const placeholder = document.createElement("div");
+         placeholder.textContent = "لا يوجد صورة/ملتيميديا لهذا التطبيق الجديد";
+         placeholder.style.cssText = "padding: 20px; border: 1px dashed #ccc; border-radius: 8px; color: var(--muted);";
+         container.appendChild(placeholder);
+      }
+      
+      const textDiv = document.createElement("div");
+      textDiv.className = "details-text";
+      
+      const descPara = document.createElement("p");
+      descPara.innerHTML = `<b>شرح مختصر:</b> ${app.text}`;
+      textDiv.appendChild(descPara);
+      
+      const linkPara = document.createElement("p");
+      linkPara.innerHTML = `<b>عنوان الموقع الإلكتروني:</b> <a href="${app.link}" target="_blank" class="app-link-small">${app.link}</a>`;
+      textDiv.appendChild(linkPara);
+
+      container.appendChild(textDiv);
+
+      if (app.audio && !app.isNew) {
+        const audio = document.createElement("audio");
+        audio.src = app.audio;
+        audio.controls = true;
+        container.appendChild(audio);
+      }
+      if (app.video && !app.isNew) {
+        const video = document.createElement("video");
+        video.src = app.video;
+        video.controls = true;
+        video.width = 200;
+        container.appendChild(video);
+      }
+
+
+     cell.appendChild(container);
+      detailsRow.appendChild(cell);
+      radio.closest("tr").insertAdjacentElement("afterend", detailsRow);
+    }
+    
+    $(document).on('click', '.new-app-row input[type="radio"]', function() {
+        toggleDetails(this);
+    });
+
+  </script>
+</body>
+</html>
