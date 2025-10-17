@@ -173,3 +173,113 @@ $(document).ready(function() {
 
 });
 
+
+   const detailsData = {
+      ChatGPT: {
+        text: "تصميم صور،نصوص،دردشة،كتابة،برمجة،تلخيص",
+        img: "media/ChatGPT.png",
+         video: "media/HB.mp4",
+        link: "https://openai.com"
+      },
+      Runway: {
+        text: "إنشاء فيديوهات ووسائط متعددة باستخدام الذكاء الاصطناعي",
+        img: "media/Runway.png",
+        link: "https://Runway.com"
+      },
+      Photomath: {
+        text: "يستخدم كاميرا الهاتف لالتقاط المعادلات أو المسائل الرياضية حتى المكتوبة بخط اليد ثم يعرض الحل خطوة بخطوة",
+        img: "media/Photomath.png",
+        audio: "media/m.wav",
+        link: "https://photomath.com"
+      },
+      Khanmigo: {
+        text: "مساعد دراسي في مواضع متنوعة(رياضيات-علوم-برمجة-كتابة) يهدف إلى أن لايعطي الإجابة مباشرةً بل بل يوجه الطالب للتفكير والاستنتاج",
+        img: "media/Khanmigo.png",
+        link: "https://Khanmigo.ai"
+      },
+      Grammarly: {
+        text: "تصحيح لغوي،تحسين الأسلوب،اقتراحات الكتابة",
+        img: "media/Grammarly.png",
+        link: "https://www.Grammarly.com"
+      }
+    };
+    let lastSelected = null;
+
+    function toggleDetails(radio) {
+      $(".details-row").remove();
+
+      if (lastSelected === radio) {
+        radio.checked = false;
+        lastSelected = null;
+        return;
+      }
+
+      lastSelected = radio;
+      
+      let app;
+      if (radio.value === "newApp") {
+          app = $(radio).data('details');
+      } else {
+          app = detailsData[radio.value];
+      }
+
+      if (!app) return;
+
+      const detailsRow = document.createElement("tr");
+      detailsRow.className = "details-row";
+
+      const cell = document.createElement("td");
+      cell.colSpan = 6;
+
+      const container = document.createElement("div");
+      container.className = "details-content";
+
+      if (app.img && !app.isNew) {
+        const img = document.createElement("img");
+        img.src = app.img;
+        img.alt = radio.value;
+        container.appendChild(img);
+      } else if (app.isNew) {
+         const placeholder = document.createElement("div");
+         placeholder.textContent = "لا يوجد صورة/ملتيميديا لهذا التطبيق الجديد";
+         placeholder.style.cssText = "padding: 20px; border: 1px dashed #ccc; border-radius: 8px; color: var(--muted);";
+         container.appendChild(placeholder);
+      }
+      
+      const textDiv = document.createElement("div");
+      textDiv.className = "details-text";
+      
+      const descPara = document.createElement("p");
+      descPara.innerHTML = `<b>شرح مختصر:</b> ${app.text}`;
+      textDiv.appendChild(descPara);
+      
+      const linkPara = document.createElement("p");
+      linkPara.innerHTML = `<b>عنوان الموقع الإلكتروني:</b> <a href="${app.link}" target="_blank" class="App-app-link-small">${app.link}</a>`;
+      textDiv.appendChild(linkPara);
+
+      container.appendChild(textDiv);
+
+      if (app.audio && !app.isNew) {
+        const audio = document.createElement("audio");
+        audio.src = app.audio;
+        audio.controls = true;
+        container.appendChild(audio);
+      }
+      if (app.video && !app.isNew) {
+        const video = document.createElement("video");
+        video.src = app.video;
+        video.controls = true;
+        video.width = 200;
+        container.appendChild(video);
+      }
+
+
+     cell.appendChild(container);
+      detailsRow.appendChild(cell);
+      radio.closest("tr").insertAdjacentElement("afterend", detailsRow);
+    }
+    
+    $(document).on('click', '.new-app-row input[type="radio"]', function() {
+        toggleDetails(this);
+    });
+

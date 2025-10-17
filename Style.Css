@@ -186,10 +186,17 @@ div h2 {
   text-underline-offset: 6px;
 }
 
-p {
+.subtitle {
   color: var(--muted);
   font-family: "Noto Sans", "Segoe UI", Tahoma, Arial, sans-serif;
   font-size: 22px;
+  font-weight: bold;
+}
+
+p {
+  color: var(--muted);
+  font-family: "Noto Sans", "Segoe UI", Tahoma, Arial, sans-serif;
+  font-size: 0.7rem;
   font-weight: bold;
 }
 
@@ -226,32 +233,6 @@ p {
     color: var(--card);
 }
 
-  .container {
-    width: 90%;
-    margin: auto;
-  }
-  table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  caption {
-    font-weight: bold;
-    margin: 10px;
-  }
-  th, td {
-    border: 1px solid #ccc;
-    padding: 8px;
-    text-align: center;
-  }
-  th {
-    background-color: #eee;
-  }
-  tr.details-row td {
-    background-color: #f9f9f9;
-    text-align: right;
-    font-size: 0.95em;
-    color: #333;
-  }
   .details-content {
     display: flex;
     align-items: flex-start;
@@ -273,62 +254,44 @@ p {
     flex: 1;
     line-height: 1.6;
   }
-  .app-link {
-    display: inline-block;
-    margin-top: 10px;
-    background-color: #007bff;
-    color: white;
-    text-decoration: none;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: background-color 0.3s ease;
-  }
-  .app-link:hover {
-    background-color: #0056b3;
-  }
+  
 
     .Appcontainer {
     width: 90%;
     margin: auto;
   }
 
-    .Appstable {
+   .Apps-table {
     width: 100%;
     border-collapse: collapse;
   }
 
-     .Appstable th, td {
+     .Apps-table th, td {
     border: 1px solid #ccc;
-    padding: 8px;
+    padding: 0.1rem;
     text-align: center;
   }
 
-    .Appstable th {
-    background-color: #eee;
-  }
-     .Appstable tr.details-row td {
+    .Apps-table tr.details-row td {
     background-color: #f9f9f9;
     text-align: right;
-    font-size: 0.95em;
+    font-size: 0.5rem;
     color: #333;
   }
 
-
-       .Appstable tr.details-row td {
-    background-color: #f9f9f9;
-    text-align: right;
-    font-size: 0.95em;
-    color: #333;
-  }
-    .Appstable .details-content {
+    .Apps-table .details-content {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
+    gap: 10px;
     flex-wrap: wrap;
   }
-   .Appstable .details-content img {
+     .Apps-table tbody,tr, td
+     {
+      height: 2px;
+     }
+   .Apps-table .details-content img {
     width: 300px;
-    height: 100px;
+    height: 50px;
     border-radius: 10px;
     object-fit: cover;
   }

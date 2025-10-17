@@ -15,7 +15,7 @@
             <ul>
                 <li><a href="home.html">الصفحة الرئيسية</a></li>
                 <li><a href="AboutUs.html">من نحن</a></li>
-                <li><a href="app3.html">التطبيقات</a></li>
+                <li><a href="index.html">التطبيقات</a></li>
                 <!-- إضافة رابط لصفحة إضافة التطبيق -->
                 <li><a href="add_app.html">إضافة تطبيق</a></li>
             </ul>
@@ -38,70 +38,70 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Designs.ai</td>
-              <td>Pixlr Inmagine Group</td>
-              <td>إنشاء صور وفيديوهات ونصوص أو تحويل النص إلى صوت</td>
+            <td>1</td>
+              <td>ChatGPT</td>
+              <td>OpenAI</td>
+              <td>مساعد نصي عام</td>
               <td>
                 <p>مجاني جزئي <input type="checkbox" checked></p>
                 <p>مجاني <input type="checkbox"></p>
                 <p>غير مجاني <input type="checkbox"></p>
               </td>
-              <td><label><input type="radio" name="details" value="designs" onchange="toggleDetails(this)"> تفاصيل</label></td>
+              <td><label><input type="radio" name="details" value="ChatGPT" onchange="toggleDetails(this)"> تفاصيل</label></td>
             </tr>
 
             <tr>
               <td>2</td>
-              <td>Mindgrasp</td>
-              <td>غير معروف</td>
-              <td>مساعد دراسي</td>
+              <td>Runway</td>
+              <td>Runway ML</td>
+              <td>محرر فيديوهات</td>
               <td>
                 <p>مجاني جزئي <input type="checkbox" checked></p>
                 <p>مجاني <input type="checkbox"></p>
                 <p>غير مجاني <input type="checkbox"></p>
               </td>
-              <td><label><input type="radio" name="details" value="mindgrasp" onchange="toggleDetails(this)"> تفاصيل</label></td>
+              <td><label><input type="radio" name="details" value="Runway" onchange="toggleDetails(this)"> تفاصيل</label></td>
             </tr>
 
             <tr>
               <td>3</td>
-              <td>Microsoft Math Solver</td>
-              <td>Microsoft</td>
+              <td>Photomath</td>
+              <td>Google</td>
               <td> حل معادلات ومسائل رياضيات</td>
               <td>
                 <p>مجاني جزئي <input type="checkbox" ></p>
                 <p>مجاني <input type="checkbox" checked> </p>
                 <p>غير مجاني <input type="checkbox"></p>
               </td>
-              <td><label><input type="radio" name="details" value="MicrosoftMathSolver" onchange="toggleDetails(this)"> تفاصيل</label></td>
+              <td><label><input type="radio" name="details" value="Photomath" onchange="toggleDetails(this)"> تفاصيل</label></td>
             </tr>
 
 
             <tr>
               <td>4</td>
-              <td>Filmora</td>
-              <td>Wondershare Technology</td>
-              <td>تحرير الفيديوهات</td>
+              <td>Khanmigo</td>
+              <td>Khan Academy</td>
+              <td>مساعد دراسي</td>
               <td>
                 <p>مجاني جزئي <input type="checkbox" checked></p>
                 <p>مجاني <input type="checkbox"></p>
                 <p>غير مجاني <input type="checkbox"></p>
               </td>
-              <td><label><input type="radio" name="details" value="filmora" onchange="toggleDetails(this)"> تفاصيل</label></td>
+              <td><label><input type="radio" name="details" value="Khanmigo" onchange="toggleDetails(this)"> تفاصيل</label></td>
             </tr>
 
             <tr>
               <td>5</td>
-              <td>Blaze.ai</td>
-              <td>Adam Nathan</td>
-              <td>توليد محتوى تسويقي</td>
+              <td>Grammarly</td>
+              <td>Grammarly,inc</td>
+              <td>تصحيح لغوي</td>
               <td>
                 <p>مجاني جزئي <input type="checkbox" checked></p>
                 <p>مجاني <input type="checkbox"></p>
                 <p>غير مجاني <input type="checkbox"></p>
               </td>
-              <td><label><input type="radio" name="details" value="blaze" onchange="toggleDetails(this)"> تفاصيل</label></td>
+              <td><label><input type="radio" name="details" value="Grammarly" onchange="toggleDetails(this)"> تفاصيل</label></td>
+            
             </tr>
           </tbody>
         </table>
@@ -114,37 +114,36 @@
         <button id="alertButton">موافق</button>
     </div>
 
-  <script>
+  <!-- <script>
     const detailsData = {
-      designs: {
-        text: "تصميم فيديوهات وصور ومحتوى تسويقي بسرعة باستخدام الذكاء الاصطناعي.",
-        img: "media/designs.png",
+      ChatGPT: {
+        text: "تصميم صور،نصوص،دردشة،كتابة،برمجة،تلخيص",
+        img: "media/ChatGPT.png",
          video: "media/HB.mp4",
-        link: "https://designs.ai"
+        link: "https://openai.com"
       },
-      mindgrasp: {
-        text: "يساعد على تلخيص النصوص والمقالات وتوليد ملاحظات دراسية ذكية.",
-        img: "media/mindgrasp.png",
-        link: "https://mindgrasp.ai"
+      Runway: {
+        text: "إنشاء فيديوهات ووسائط متعددة باستخدام الذكاء الاصطناعي",
+        img: "media/Runway.png",
+        link: "https://Runway.com"
       },
-      MicrosoftMathSolver: {
-        text: "تطبيق لحل مسائل الرياضيات وتصوير السؤال للحصول على الحل بالشرح.",
-        img: "media/MicrosoftMathSolver.png",
+      Photomath: {
+        text: "يستخدم كاميرا الهاتف لالتقاط المعادلات أو المسائل الرياضية حتى المكتوبة بخط اليد ثم يعرض الحل خطوة بخطوة",
+        img: "media/Photomath.png",
         audio: "media/m.wav",
-        link: "https://mathsolver.microsoft.com"
+        link: "https://photomath.com"
       },
-      filmora: {
-        text: "برنامج لتحرير الفيديوهات يوفر أدوات ذكاء اصطناعي لتوليد المؤثرات وتحسين الجودة.",
-        img: "media/filmora.png",
-        link: "https://filmora.wondershare.com"
+      Khanmigo: {
+        text: "مساعد دراسي في مواضع متنوعة(رياضيات-علوم-برمجة-كتابة) يهدف إلى أن لايعطي الإجابة مباشرةً بل بل يوجه الطالب للتفكير والاستنتاج",
+        img: "media/Khanmigo.png",
+        link: "https://Khanmigo.ai"
       },
-      blaze: {
-        text: "مولد محتوى تسويقي سريع لإنشاء منشورات ومدونات ورسائل بريدية احترافية.",
-        img: "media/blaze.ai", // تم تعديل المسار افتراضيا
-        link: "https://www.blaze.ai"
+      Grammarly: {
+        text: "تصحيح لغوي،تحسين الأسلوب،اقتراحات الكتابة",
+        img: "media/Grammarly.png",
+        link: "https://www.Grammarly.com"
       }
     };
-
     let lastSelected = null;
 
     function toggleDetails(radio) {
@@ -225,7 +224,7 @@
         toggleDetails(this);
     });
 
-  </script>
+  </script> -->
 </body>
 </html>
 
